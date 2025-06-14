@@ -1,0 +1,143 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  } */
+
+  /* body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  } */
+
+  .slidery-container {
+    position: relative;
+    width: 100vw; /* Make the container span the full width of the viewport */
+    height: 400px;
+    margin: 0px auto;
+    overflow: hidden;
+    border-radius: 0 0 10px 10px; /* Top edges sharp, bottom edges curved */
+    background: url('../images/slide5.png') no-repeat center center/cover;
+}
+
+  .slidery-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .slidery-text {
+    max-width: 80%;
+  }
+
+  .slidery-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    animation: slideInLeft 1s;
+  }
+
+  .slidery-text p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    animation: slideInLeft 1.2s;
+  }
+
+  .slidery-text .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    animation: slideInRight 1.4s;
+  }
+
+  .btn:hover {
+    background-color: #218838;
+  }
+
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .slidery-container {
+      height: 300px;
+    }
+
+    .slidery-text h2 {
+      font-size: 1.5rem;
+    }
+
+    .slidery-text p {
+      font-size: 0.9rem;
+    }
+
+    .slidery-text .btn {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .slidery-container {
+      height: 180px; /* Reduced height for smaller devices */
+    }
+
+    .slidery-text h2 {
+      font-size: 1.2rem;
+    }
+
+    .slidery-text p {
+      font-size: 0.8rem;
+    }
+
+    .slidery-text .btn {
+      font-size: 0.8rem;
+      padding: 6px 12px;
+    }
+  }
+
+  /* Adjust for larger screens */
+@media (min-width: 1024px) {
+  .slidery-container {
+      aspect-ratio: 21 / 9; /* Wider and shorter aspect ratio for desktops */
+      max-width: 1300px; /* Reduce the width for large screens */
+      margin-left: auto;
+      margin-right: auto;
+  }
+}
